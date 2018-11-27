@@ -1,5 +1,6 @@
 # -Analog-Color-Organ-Light-Organ
 3-Channel “Analog” Color Organ/Light Organ for Arduino DUE and WS2811 Strings
+
 This sketch emulates an analog system patented to Frederic L. Way as US 3,018,683 and US
 3,181,015 in 1962 and 1965, claiming bandpass filters and mechanically controlled resistive
 dimmers or Silicon Controlled Rectifiers. Way’s patents were assigned to Mobilcolor, Inc,
