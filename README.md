@@ -3,7 +3,7 @@
 
 This sketch emulates an analog system patented to Frederic L. Way as US 3,018,683 and US
 3,181,015 in 1962 and 1965, claiming bandpass filters and mechanically controlled resistive
-dimmers or Silicon Controlled Rectifiers. Way’s patents were assigned to Mobilcolor, Inc,
+dimmers then later, Silicon Controlled Rectifiers. Way’s patents were assigned to Mobilcolor, Inc,
 which leased equipment based on them to radio stations including Omaha and Indianapolis,
 where it was used for holiday “Carol Tree” displays.
 
@@ -98,14 +98,15 @@ plugged into power.
 Volume Setting: The color organ self-adjusts to the level of the input signal over a fairly wide
 range, but if your volume setting or input signal is too low, the colors will not reach full
 brightness. If your volume setting is too high, no damage occurs but only soft passages will
-show color and loud passages will turn on all colors at once, producing mostly pastels.
-Whether you have control of this depends on the type of input source you are using. Line and
-record outputs on a stereo are best because they deliver a constant level independent of your
-volume setting. The effect can be visualized by comparing the three filter plots with
-DYNAMIC_RANGE, the LED off threshold and a modifiable named parameter in the sketch.
-The color organ can be turned OFF and back ON with the ON/OFF button. When turned
-back ON, the color organ will resume as it was when turned OFF, including the Quiet Color as
-long as the unit hasn’t been unplugged while OFF.
+show color and loud passages will turn on all colors in saturation, producing mostly pastels. 
+The effect can be visualized in the accompanying filter plots PDF by comparing the crossovers 
+between the three filter responses with DYNAMIC_RANGE, which is the LED cutoff threshold and 
+a modifiable named parameter in the sketch. Line and record outputs on a stereo are ideal sources
+because they deliver a constant level independent of your volume setting. 
+
+The color organ can be turned OFF and back ON with the ON/OFF button. When turned ON, the color
+organ will resume in the state it was in when turned OFF, including the Quiet Color, as
+long as the controller wasn't powered down while OFF.
 
 ALTERNATIVE EFFECTS
 
