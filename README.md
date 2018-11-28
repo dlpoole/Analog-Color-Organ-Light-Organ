@@ -8,7 +8,7 @@ which leased equipment based on them to radio stations including Omaha and India
 where it was used for holiday “Carol Tree” displays.
 
 Improvements: This implementation adds a fast AGC, digital filtering, full wave peak
-detection, dB scaling, smoothing time constants, and mapping of the three band dB converted
+detection, dB scaling, smoothing time constants, and mapping of the three filtered dB-converted
 results to WS2811 RGB intensities over a given dynamic range. Cascaded first order filters
 are used to make 10KHz sampling feasible within the CPU capability of the Arduino DUE.
 The filter crossovers are at 60Hz and 1200Hz instead of Way’s 540Hz and 1800Hz, but these
@@ -20,11 +20,11 @@ uniform color of arbitrary hue, saturation and brightness, random colors, or a r
 successive LEDs with selectable saturation and brightness. The hue can be varied or the
 rainbow trickled and a sparkle effect can be added and sped up or slowed. Those effects
 could be forked and recompiled for Arduino UNO with appropriate changes in pin
-assignments. Only the color organ function requires the greater CPU horsepower of the DUE.
+assignments. Only the color organ function requires the greater CPU throughput of the DUE.
 
 Libraries: This sketch requires the FastLED library from http://fastled.io and a fork of the
 library irlib2 from https: github.com/cyborg5/IRLib2 with unreferenced headers and code for
-IRLLibRecv removed since it throws errors if compiled for SAM3X8E. The forked library,
+IRLLibRecv removed since they throw errors if compiled for SAM3X8E. The forked library,
 renamed IRLibPCISamX, can be carried along with the files for this sketch and placed in the
 /libraries folder associated with the IDE, which then must be restarted to recognize it.
 
@@ -68,8 +68,8 @@ be handled in a fork of the sketch, this sketch assumes NEC codes such as that s
 Adafruit Mini Remote. This relies on the NEC autoresume feature which uses the repeat
 (0xffffffff) code as an end-of-frame. The NEC decoder rapidly decodes the repeat frames,
 necessitating a count of 5 repeats before accepting a held key as a repeat. An overlay,
-RemoteCover.odg can be printed with LibreOffice Write and pasted on the remote to show
-the remote key assignments.
+RemoteCover.odg can be printed with LibreOffice or OpenOffice and pasted on the remote to 
+label the key assignments.
 
 Audio Sources: Nearly any audio source can be used, typically the “record” or “line” output
 of a stereo or the headphone jack of a music player, cell phone or tablet. A Y-cable may be
