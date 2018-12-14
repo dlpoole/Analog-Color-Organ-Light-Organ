@@ -3,9 +3,9 @@
 
 This sketch emulates an analog system patented to Frederic L. Way as US 3,018,683 and US
 3,181,015 in 1962 and 1965, claiming bandpass filters and mechanically controlled resistive
-dimmers then later, Silicon Controlled Rectifiers. Way’s patents were assigned to Mobilcolor, Inc,
-which leased equipment based on them to radio stations including Omaha and Indianapolis,
-where it was used for holiday “Carol Tree” displays.
+dimmers then Silicon Controlled Rectifiers, respectively. Way’s patents were assigned to 
+Mobilcolor, Inc, which leased equipment based on them to radio stations including those
+in Omaha and Indianapolis, where it was used as a holiday “Carol Tree” promotion.
 
 Improvements: This implementation adds a fast AGC, digital filtering, full wave peak
 detection, dB scaling, smoothing time constants, and mapping of the three filtered dB-converted
@@ -57,11 +57,13 @@ WS2811 strings are available from a few domestic importers and Chinese sources. 
 the strings typically have a male connector and pigtail at one end and a female connector
 molded to the other so as to suggest daisy-chaining them, at least some ship with the
 equivalent of 21 AWG stranded wire, the resistance of which is too great to support more than
-50 LED clusters, which at full white, total 2.5 Amperes. This isn’t noticeable across a single
+50 LED clusters, which at full white, draw 2.5 Amperes. This isn’t noticeable across a single
 string because there is some current compliance within the WS2811, but it will become
 noticeable with two strings. Some resellers claim strings with 18 AWG wire, in which case the
 number of interfaces might be relaxed, but the #define NUMBER_STRINGS 4 and #define
-LEDS_PER_STRING 50 would require change.
+LEDS_PER_STRING 50 would require change.  Note that WS2811 strings may be very ESD vulnerable,
+particularly the first "bulb" in a string which floats until it has been connected to a driver.
+ESD damage to that chip is likely to interrupt the data flow to all bulbs down the string. 
 
 Infrared Remote: Although a few other decoders are anticipated in the #includes and could
 be handled in a fork of the sketch, this sketch assumes NEC codes such as that sent by the
@@ -101,8 +103,10 @@ brightness. If your volume setting is too high, no damage occurs but only soft p
 show color and loud passages will turn on all colors in saturation, producing mostly pastels. 
 The effect can be visualized in the accompanying filter plots PDF by comparing the crossovers 
 between the three filter responses with DYNAMIC_RANGE, which is the LED cutoff threshold and 
-a modifiable named parameter in the sketch. Line and record outputs on a stereo are ideal sources
-because they deliver a constant level independent of your volume setting. 
+a modifiable named parameter in the sketch. Pastels can also be the effect of commercially 
+broadcast program content which is usually subjected to deep multi-band dynamic range compression.
+Line and record outputs on a stereo are ideal sources because they deliver a constant level
+independent of your volume setting. 
 
 The color organ can be turned OFF and back ON with the ON/OFF button. When turned ON, the color
 organ will resume in the state it was in when turned OFF, including the Quiet Color, as
